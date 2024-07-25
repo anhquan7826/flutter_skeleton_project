@@ -1,0 +1,26 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:flutter_skeleton_project/ui/view/splash/splash.cubit.dart';
+import 'package:flutter_skeleton_project/ui/view/splash/splash.view.dart';
+
+class AppRoute {
+  AppRoute._();
+
+  static const String splash = '/';
+
+  static GoRouter get configurations {
+    return GoRouter(
+      routes: [
+        GoRoute(
+          path: splash,
+          builder: (context, state) {
+            return BlocProvider(
+              create: (context) => SplashCubit(),
+              child: const SplashView(),
+            );
+          },
+        ),
+      ],
+    );
+  }
+}
