@@ -8,19 +8,17 @@ class AppRoute {
 
   static const String splash = '/';
 
-  static GoRouter get configurations {
-    return GoRouter(
-      routes: [
-        GoRoute(
-          path: splash,
-          builder: (context, state) {
-            return BlocProvider(
-              create: (context) => SplashCubit(),
-              child: const SplashView(),
-            );
-          },
-        ),
-      ],
-    );
-  }
+  static GoRouter configurations = GoRouter(
+    routes: [
+      GoRoute(
+        path: splash,
+        builder: (context, state) {
+          return BlocProvider(
+            create: (context) => SplashCubit(),
+            child: const SplashView(),
+          );
+        },
+      ),
+    ],
+  );
 }
